@@ -2942,6 +2942,13 @@ public final class Settings {
         */
         public static final String STATUSBAR_CLOCK_DATE_FORMAT = "statusbar_clock_date_format";
 
+
+	/* Network speed indicator
+         * @hide
+         */
+        public static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
+	
+
         /**
          * Display style of the status bar battery information
          * 0: Display the battery an icon in portrait mode
