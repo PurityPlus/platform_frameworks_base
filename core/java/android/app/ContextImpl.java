@@ -16,6 +16,8 @@
 
 package android.app;
 
+import android.content.res.IThemeService;
+import android.content.res.ThemeManager;
 import android.os.Build;
 import com.android.internal.policy.PolicyManager;
 import com.android.internal.util.Preconditions;
@@ -600,12 +602,21 @@ class ContextImpl extends Context {
                 return new ConsumerIrManager(ctx);
             }});
 
+
         registerService(BATTERY_SERVICE, new ServiceFetcher() {
                 public Object createService(ContextImpl ctx) {
                     IBinder b = ServiceManager.getService(BATTERY_SERVICE);
                     IBatteryService service = IBatteryService.Stub.asInterface(b);
                     return new BatteryManager(service, ctx);
                 }});
+
+        registerService(THEME_SERVICE, new ServiceFetcher() {
+            public Object createService(ContextImpl ctx) {
+                IBinder b = ServiceManager.getService(THEME_SERVICE);
+                IThemeService service = IThemeService.Stub.asInterface(b);
+                return new ThemeManager(ctx.getOuterContext(),
+                        service);
+            }});
     }
 
     static ContextImpl getImpl(Context context) {
