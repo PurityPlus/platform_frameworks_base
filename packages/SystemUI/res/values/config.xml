@@ -114,5 +114,9 @@
 
     <!-- Device supports LED flashlight -->
     <bool name="config_enableTorch">false</bool>
+
+    <!-- Default value how much apps show the app screenshot on recents view entry -->
+    <integer name="expanded_items_default">2</integer>
+
 </resources>
 
