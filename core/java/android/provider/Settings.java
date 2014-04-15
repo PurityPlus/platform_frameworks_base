@@ -2987,6 +2987,12 @@ public final class Settings {
         public static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
 
         /**
+         * Navigation recent long press
+         * @hide
+         */
+        public static final String NAVBAR_RECENT_LONG_PRESS = "navbar_recent_long_press";
+
+        /**
          * Quick Settings Quick access ribbon
          *
          * @hide

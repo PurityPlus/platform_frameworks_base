@@ -771,6 +771,14 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         mHandler.removeCallbacks(mScreenshotRunnable);
     }
 
+    private final Runnable mGlobalMenu = new Runnable() {
+        @Override
+        public void run() {
+            sendCloseSystemWindows(SYSTEM_DIALOG_REASON_GLOBAL_ACTIONS);
+            showGlobalActionsDialog();
+        }
+    };
+
     private final Runnable mPowerLongPress = new Runnable() {
         @Override
         public void run() {
@@ -3559,6 +3567,11 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
     private boolean expandedDesktopHidesStatusBar() {
         return mExpandedDesktopStyle == 2;
+    }
+
+    /** {@inheritDoc} */
+    public void toggleGlobalMenu() {
+        mHandler.post(mGlobalMenu);
     }
 
     private void offsetInputMethodWindowLw(WindowState win) {

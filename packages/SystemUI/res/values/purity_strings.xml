@@ -102,4 +102,7 @@
     <!-- Hide notification icons -->
     <string name="status_bar_notification_hide_icon_packages">Hide app\'s notification icon(s)</string>
 
+    <!-- Long-press back kill application -->
+    <string name="app_killed_message">App killed</string>
+
 </resources>
