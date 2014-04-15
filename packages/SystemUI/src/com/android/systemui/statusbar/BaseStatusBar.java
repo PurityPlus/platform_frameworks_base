@@ -323,6 +323,8 @@ public abstract class BaseStatusBar extends SystemUI implements
         mLocale = mContext.getResources().getConfiguration().locale;
         mLayoutDirection = TextUtils.getLayoutDirectionFromLocale(mLocale);
 
+        mRecents = new RecentController(mContext, mLayoutDirection);
+
         mStatusBarContainer = new FrameLayout(mContext);
 
         mNotificationPeek = new NotificationPeek(this, mContext);
