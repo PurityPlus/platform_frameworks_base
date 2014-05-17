@@ -186,4 +186,8 @@
     1. Right
     2. Left -->
     <integer name="def_qs_quick_pulldown">1</integer>
+
+    <!-- Default theme -->
+    <string name="def_theme_package"></string>
+    <string name="def_theme_components"></string>
 </resources>
