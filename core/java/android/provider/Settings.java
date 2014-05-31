@@ -3147,6 +3147,14 @@ public final class Settings {
         public static final String PEEK_PICKUP_TIMEOUT = "peek_pickup_timeout";
 
         /**
+         * Time to show notification
+         * 7000ms = default
+         * @hide
+         */
+        public static final String PEEK_WAKE_TIMEOUT = "peek_wake_timeout";
+
+
+        /**
          * Whether recent panel gravity is left or right (default = Gravity.RIGHT).
          * @hide
          */
