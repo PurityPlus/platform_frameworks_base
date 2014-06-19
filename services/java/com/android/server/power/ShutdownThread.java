@@ -98,6 +98,12 @@ public final class ShutdownThread extends Thread {
     
     private ShutdownThread() {
     }
+
+    public static boolean isStarted() {
+        synchronized (sIsStartedGuard) {
+            return sIsStarted;
+        }
+    }
  
     /**
      * Request a clean shutdown, waiting for subsystems to clean up their
