@@ -2789,6 +2789,23 @@ public final class Settings {
         /**
          * Quick Settings Collapse Pane
          *
+         * Whether a notification should be shown when a call/message is blocked
+         * Heads Up Notifications
+         *
+         * @hide
+         */
+        public static final String HEADS_UP_NOTIFICATION = "heads_up_enabled";
+
+        /**
+         * Which applications to disable heads up notifications for
+         *
+         * @hide
+         */
+        public static final String HEADS_UP_CUSTOM_VALUES = "heads_up_custom_values";
+
+        /**
+         * Quick Settings Collapse Pane
+         *
          * @hide
          */
         public static final String QS_COLLAPSE_PANEL = "qs_collapse_panel";
