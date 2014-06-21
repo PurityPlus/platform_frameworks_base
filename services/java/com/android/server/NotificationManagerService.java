@@ -79,6 +79,7 @@ import android.widget.Toast;
 import com.android.internal.R;
 
 import com.android.internal.notification.NotificationScorer;
+import com.android.internal.util.FastXmlSerializer;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
@@ -889,8 +890,7 @@ public class NotificationManagerService extends INotificationManager.Stub
     @Override
     public void registerListener(final INotificationListener listener,
             final ComponentName component, final int userid) {
-
-        if (permission == PackageManager.PERMISSION_DENIED) checkCallerIsSystem();
+        checkCallerIsSystem();
 
         synchronized (mNotificationList) {
             try {
