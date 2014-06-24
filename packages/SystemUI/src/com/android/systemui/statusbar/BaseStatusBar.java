@@ -210,7 +210,7 @@ public abstract class BaseStatusBar extends SystemUI implements
     private boolean mDeviceProvisioned = false;
     private int mAutoCollapseBehaviour;
 
-    private int mExpandedDesktopStyle = 0;
+    protected int mExpandedDesktopStyle = 0;
 
     private boolean mCustomRecent = false;
 
