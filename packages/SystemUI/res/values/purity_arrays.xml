@@ -68,9 +68,4 @@
         <item>0</item><item>286</item>
     </array>
 
-    <!-- Hover -->
-    <array name="hover_blacklisted_packages">
-        <item>com.google.android.googlequicksearchbox</item>
-    </array>
-
 </resources>
