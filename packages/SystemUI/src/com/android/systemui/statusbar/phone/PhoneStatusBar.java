@@ -3254,6 +3254,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         mNotificationData.clear();
 
         makeStatusBarView();
+        addHeadsUpView();
         repositionNavigationBar();
 
         rebuildRecentsScreen();
