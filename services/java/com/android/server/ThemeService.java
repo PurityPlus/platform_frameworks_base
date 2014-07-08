@@ -589,11 +589,6 @@ public class ThemeService extends IThemeService.Stub {
         if (components.contains(ThemesContract.ThemesColumns.MODIFIES_STATUS_BAR)) {
             builder.overlay("com.android.systemui", mPkgName);
         }
-
-        if (components.contains(ThemesContract.ThemesColumns.MODIFIES_NAVIGATION_BAR)) {
-            builder.overlay(ThemeConfig.SYSTEMUI_NAVBAR_PKG, mPkgName);
-        }
-
         return builder;
     }
 

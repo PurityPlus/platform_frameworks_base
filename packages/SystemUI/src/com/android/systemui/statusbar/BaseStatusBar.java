@@ -32,6 +32,8 @@ import android.content.IntentFilter;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
+import android.content.pm.ResolveInfo;
+import android.content.res.Resources;
 import android.content.res.ThemeConfig;
 import android.content.ServiceConnection;
 import android.database.ContentObserver;
