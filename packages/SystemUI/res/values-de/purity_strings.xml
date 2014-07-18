@@ -68,4 +68,6 @@
     <string name="pie_phone_status_no_service">Kein Dienst</string>
     <string name="pie_phone_status_airplane_mode">Flugmodus</string>
     <string name="pie_phone_status_emergency_only">Nur Notrufe</string>
+    <string name="quick_settings_heads_up_on">Pop-up-Benachrichtigungen aktiviert</string>
+    <string name="quick_settings_heads_up_off">Keine Unterbrechungen</string>
 </resources>

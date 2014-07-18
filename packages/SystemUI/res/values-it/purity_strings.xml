@@ -67,4 +67,6 @@
     <string name="screenshot_notification_delete">Elimina</string>
     <string name="quick_settings_power">Spegnimento</string>
     <string name="screenshot_delete_confirmation">Screenshot cancellato.</string>
+    <string name="quick_settings_heads_up_on">Heads up attivato</string>
+    <string name="quick_settings_heads_up_off">No interruzioni</string>
 </resources>

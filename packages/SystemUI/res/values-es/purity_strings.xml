@@ -58,4 +58,6 @@
     <string name="navbar_menu_always_button">Botón Menú (siempre visible)</string>
     <string name="navbar_menu_big_button">Botón Menú</string>
     <string name="screenshot_notification_delete">Borrar</string>
+    <string name="quick_settings_heads_up_on">Notificaciones emergentes</string>
+    <string name="quick_settings_heads_up_off">Notificaciones emergentes</string>
 </resources>
