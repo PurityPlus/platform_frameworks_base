@@ -71,6 +71,9 @@
     <!-- Alarm clocks -->
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
+    <!-- WallpaperManager -->
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+
     <!-- Keyguard -->
     <uses-permission android:name="android.permission.CONTROL_KEYGUARD" />
 
