@@ -65,7 +65,6 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
 import android.view.WindowManagerGlobal;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -78,6 +77,7 @@ import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.statusbar.StatusBarIcon;
 import com.android.internal.statusbar.StatusBarIconList;
 import com.android.internal.widget.SizeAdaptiveLayout;
+
 import com.android.systemui.R;
 import com.android.systemui.RecentsComponent;
 import com.android.systemui.SearchPanelView;
@@ -1611,28 +1611,16 @@ public abstract class BaseStatusBar extends SystemUI implements
         boolean isRequested = asHeadsUp == Notification.HEADS_UP_REQUESTED;
         boolean isOngoing = sbn.isOngoing();
 
-        final InputMethodManager inputMethodManager = (InputMethodManager)
-                mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
-
-        boolean isIMEShowing = inputMethodManager.isImeShowing();
-
         final KeyguardTouchDelegate keyguard = KeyguardTouchDelegate.getInstance(mContext);
         boolean keyguardNotVisible = !keyguard.isShowingAndNotHidden()
                 && !keyguard.isInputRestricted();
-        boolean keyguardVisibleNotSecure =
-                keyguard.isShowingAndNotHidden() && !keyguard.isSecure();
 
         // Possibly a heads up from an app with native support.
         boolean interrupt = (isFullscreen || (isHighPriority && isNoisy) || isRequested)
                 && isAllowed
-                && mPowerManager.isScreenOn()
-                && (keyguardNotVisible || keyguardVisibleNotSecure);
-
-        // Possibly a heads up package set from the user.
-        interrupt = interrupt
-                || (!isOngoing
-                && mPowerManager.isScreenOn()
-                && (keyguardNotVisible || keyguardVisibleNotSecure));
+                && keyguardNotVisible
+                && !isOngoing
+                && mPowerManager.isScreenOn();
 
         try {
             interrupt = interrupt && !mDreamManager.isDreaming();
@@ -1642,7 +1630,7 @@ public abstract class BaseStatusBar extends SystemUI implements
 
         // its below our threshold priority, we might want to always display
         // notifications from certain apps
-        if (!isHighPriority && keyguardNotVisible && !isOngoing && !isIMEShowing &&!isRequested) {
+        if (!isHighPriority && keyguardNotVisible && !isOngoing &&!isRequested) {
             // However, we don't want to interrupt if we're in an application that is
             // in Do Not Disturb
             if (!isPackageInDnd(getTopLevelPackage())) {
