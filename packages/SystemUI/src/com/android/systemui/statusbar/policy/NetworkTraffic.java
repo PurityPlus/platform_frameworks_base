@@ -153,7 +153,6 @@ public class NetworkTraffic extends TextView {
                     mState == MASK_UP + MASK_DOWN &&
                        speedRxKB <= mAutoHideThreshold &&
                        speedTxKB <= mAutoHideThreshold);
-
         }
     };
 
