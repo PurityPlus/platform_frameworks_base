@@ -149,10 +149,8 @@ public final class ShutdownThread extends Thread {
                                 String actions[] = context.getResources().getStringArray(com.android.internal.R.array.shutdown_reboot_actions);
 
                                     if (actions != null && which < actions.length) {
-                                    mRebootReason = actions[which];
-                                        if (actions[which].equals(SOFT_REBOOT)) {
-                                            mRebootSoft = true;
-                                        }
+                                        mRebootReason = actions[which];
+                                        mRebootSoft = actions[which].equals(SOFT_REBOOT);
                                     }
                             }
                         })
