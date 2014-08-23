@@ -2492,6 +2492,8 @@ public class NotificationManagerService extends INotificationManager.Stub
             enableLed = false;
         } else if (isLedNotificationForcedOn(mLedNotification)) {
             enableLed = true;
+        } else if (!mNotificationPulseEnabled) {
+            enableLed = false;
         } else if (mInCall || (mScreenOn && (!mDreaming))) {
             enableLed = false;
         } else {
