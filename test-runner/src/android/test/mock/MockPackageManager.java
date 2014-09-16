@@ -675,4 +675,13 @@ public class MockPackageManager extends PackageManager {
     public void updateIconMaps(String pkgName) {
         throw new UnsupportedOperationException();
     }
+
+    /**
+     * @hide
+     */
+    @Override
+    public int processThemeResources(String themePkgName) {
+        throw new UnsupportedOperationException();
+    }
+
 }
